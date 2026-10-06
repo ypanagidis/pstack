@@ -45,6 +45,8 @@ Then ask for the default reasoning effort, the `default effort` line. It is `ses
 
 On Claude Code and Codex, the plugin's `SessionStart` hook injects the poteto-mode mandate on startup, resume, clear, and compact. Codex asks the user to trust plugin hooks through `/hooks` before running them. On Pi, the pstack extension adds the same mandate to the system prompt at every agent start. Ask whether to keep the hook. The default is on. The answer is the `session hook` line in the current runtime's sheet: `on` or `off`. With no sheet or no line, the hook injects. The line is inert on other runtimes.
 
+On Claude Code, then ask about the Codex seat, the `codex seat` line. It adds one panel member from a different model family through the Codex CLI, as described in [codex-seat.md](../poteto-mode/references/codex-seat.md). The default is `gpt-6.1-sol @xhigh`. Offer the models `codex` lists in `~/.codex/models_cache.json`, each with an effort the model accepts, or `off`.
+
 ### 5. Validate
 
 Every real slug written must be in the detected set. `inherit-parent` and `auto` always pass. Validate the slug without any `@<level>` suffix, and the level against the effort levels in [Models](#models). The `default effort` value is one of those levels or `session`. On Codex, the levels are the `reasoning_effort` values your Codex models accept instead. If a chosen real slug or level is not available, stop and ask again.
@@ -56,7 +58,7 @@ Write the current runtime's sheet with the shape below. Overwrite the whole file
 ```markdown
 # pstack model configuration
 
-Per-role model overrides for pstack skills. Each pstack SKILL.md names its defaults in a Models section; the values here override those defaults. Delete a line to fall back to the skill default. A value of `inherit-parent` or `auto` runs that role on the parent session's model (the `Agent` call omits `model`); an alias entry in a panel list still counts toward that panel's fan-out. A model may carry a reasoning effort, as in `opus @xhigh` (levels: low, medium, high, xhigh, max); the role then runs through the pstack effort agent of that level, each entry of a panel list on its own. `default effort` sets the level for a value without one; `session` keeps the parent session's effort. `session hook: off` stops the Claude Code or Codex SessionStart hook, or the pstack Pi extension, from injecting the poteto-mode mandate; any other value, or no line, leaves it on.
+Per-role model overrides for pstack skills. Each pstack SKILL.md names its defaults in a Models section; the values here override those defaults. Delete a line to fall back to the skill default. A value of `inherit-parent` or `auto` runs that role on the parent session's model (the `Agent` call omits `model`); an alias entry in a panel list still counts toward that panel's fan-out. A model may carry a reasoning effort, as in `opus @xhigh` (levels: low, medium, high, xhigh, max); the role then runs through the pstack effort agent of that level, each entry of a panel list on its own. `default effort` sets the level for a value without one; `session` keeps the parent session's effort. `session hook: off` stops the Claude Code or Codex SessionStart hook, or the pstack Pi extension, from injecting the poteto-mode mandate; any other value, or no line, leaves it on. `codex seat` names the Codex model and effort for the extra cross-family panel member on Claude Code; `off` turns that seat off.
 
 feature, refactoring: opus
 bug-fix: fable
@@ -78,6 +80,7 @@ interrogate reviewers: opus, fable, sonnet
 
 default effort: session
 session hook: on
+codex seat: gpt-6.1-sol @xhigh
 ```
 
 ### 7. Wire it in

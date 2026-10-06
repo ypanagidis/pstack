@@ -12,6 +12,12 @@
       "since": "0.9.34",
       "upstream": "not-proposed"
     },
+    "plugins/pstack/skills/arena/SKILL.md": {
+      "kind": "policy",
+      "why": "Adds the Codex seat (poteto-mode/references/codex-seat.md), a cross-family panel member run through the Codex CLI on Claude Code.",
+      "since": "0.9.74",
+      "upstream": "not-proposed"
+    },
     "plugins/pstack/skills/blast-radius/SKILL.md": {
       "kind": "policy",
       "why": "Extends the trigger to run before design when a brief asserts something about existing code.",
@@ -28,6 +34,12 @@
       "kind": "port-feature",
       "why": "Names the generated project skill verify so it replaces Claude Code's bundled user-only /verify and the playbooks can invoke it.",
       "since": "0.9.29",
+      "upstream": "not-proposed"
+    },
+    "plugins/pstack/skills/interrogate/SKILL.md": {
+      "kind": "policy",
+      "why": "Adds the Codex seat (poteto-mode/references/codex-seat.md), a cross-family panel member run through the Codex CLI on Claude Code.",
+      "since": "0.9.74",
       "upstream": "not-proposed"
     },
     "plugins/pstack/skills/poteto-help/SKILL.md": {
@@ -64,6 +76,12 @@
       "kind": "policy",
       "why": "The reply quotes the decisive failing and passing output trimmed to the assertion and counts, not the whole repro verbatim.",
       "since": "0.9.10",
+      "upstream": "not-proposed"
+    },
+    "plugins/pstack/skills/poteto-mode/playbooks/eval.md": {
+      "kind": "policy",
+      "why": "Adds the Codex seat (poteto-mode/references/codex-seat.md), a cross-family panel member run through the Codex CLI on Claude Code.",
+      "since": "0.9.74",
       "upstream": "not-proposed"
     },
     "plugins/pstack/skills/poteto-mode/playbooks/feature.md": {
