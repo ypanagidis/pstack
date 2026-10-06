@@ -99,8 +99,15 @@ jobs:
         if: ${{ !cancelled() && github.event_name == 'pull_request' }}
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          GH_TOKEN: ${{ github.token }}
+        # The checkout keeps no credentials, and a private repository refuses
+        # an anonymous fetch, so this one fetch carries the job's read token
+        # through git's environment config rather than its argv or .git/config.
         run: |
-          git fetch --depth=1 origin "$BASE_SHA"
+          GIT_CONFIG_COUNT=1 \
+            GIT_CONFIG_KEY_0=http.https://github.com/.extraheader \
+            GIT_CONFIG_VALUE_0="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)" \
+            git fetch --depth=1 origin "$BASE_SHA"
           declare -A forks port_only
           while IFS= read -r path; do forks[$path]=1; done < <(jq -r '.[] | keys[]' tools/forks.json)
           while IFS= read -r path; do port_only[$path]=1; done < <(

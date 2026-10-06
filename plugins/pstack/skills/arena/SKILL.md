@@ -37,11 +37,13 @@ Spawn all N subagents in one message with `run_in_background: true`, each with t
 
 Each rationale names the alternatives the candidate considered and what it rejected.
 
+On Claude Code, the Codex seat adds one more runner from a different model family unless the sheet's `codex seat` line is `off`. Give it the same prompt and its own output path, and run it with `--write` per [codex-seat.md](../poteto-mode/references/codex-seat.md).
+
 If a candidate fails to produce output, proceed with N-1 and note the dropout in the synthesis record.
 
 ## Phase C: Cross-judge
 
-After all Phase B candidates complete, choose one model from the `arena cross-judge pool` line in `pstack-models.md`. If the sheet or that line is missing, choose from the runner defaults in [Models](#models). Prefer a different model family from the parent's. Spawn one readonly judge subagent on that model. It sees the rubric and the candidates by path label, scores each criterion, and recommends a base with rationale. It runs in parallel with the parent's reading in Phase D, not with the candidates themselves. Don't spawn the judge while candidates are still writing.
+After all Phase B candidates complete, choose one model from the `arena cross-judge pool` line in `pstack-models.md`. If the sheet or that line is missing, choose from the runner defaults in [Models](#models). Prefer a different model family from the parent's. Spawn one readonly judge subagent on that model. It sees the rubric and the candidates by path label, scores each criterion, and recommends a base with rationale. It runs in parallel with the parent's reading in Phase D, not with the candidates themselves. Don't spawn the judge while candidates are still writing. On Claude Code with a Claude parent, the judge is the Codex seat, run read-only per [codex-seat.md](../poteto-mode/references/codex-seat.md), unless the sheet's `codex seat` line is `off`.
 
 ## Phase D: Pick a base
 

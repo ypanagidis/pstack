@@ -59,6 +59,8 @@ Read `references/reviewer-prompt.md` and fill in the template with:
 
 The same filled template goes to all reviewers, so every model applies the code-quality lens.
 
+On Claude Code, the Codex seat adds one more reviewer from a different model family unless the sheet's `codex seat` line is `off`. Write the same filled template to a file and run it read-only per [codex-seat.md](../poteto-mode/references/codex-seat.md).
+
 ## Step 4, Synthesize
 
 As results come back, build a unified picture:
