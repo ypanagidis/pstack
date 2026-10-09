@@ -248,7 +248,7 @@
     },
     "plugins/pstack/skills/reflect/SKILL.md": {
       "kind": "port-feature",
-      "why": "Finds the session transcript with the port's find-transcript.mjs under Claude Code's projects directory and drops Cursor's readonly agent mode and inline model column.",
+      "why": "Finds the session transcript with the port's find-transcript.mjs under Claude Code's projects directory and drops Cursor's readonly agent mode and inline model column. Routes repository lessons into the repository and pstack edits into the clone the sheet's pstack source line names, never the installed plugin copy, which an update replaces.",
       "since": "0.1.0",
       "upstream": "not-proposed"
     },
