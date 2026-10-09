@@ -57,6 +57,12 @@ Before applying any Accepted edit, present the synthesizer's full Accepted/Rejec
 
 Backlog items file to whatever devex / backlog tracker your team uses automatically. Only the Accepted list waits for approval.
 
+Decide where each approved edit lands before making it:
+
+- A lesson true only of the current repository goes into that repository: its agent instruction file, a project playbook under `.agents/playbooks/`, or one of its own skills. Prefer this home when a lesson names the repository's code, commands, or rules.
+- An edit to a pstack skill goes into the clone the `pstack source` line in `pstack-models.md` names, never into the installed plugin. The installed copy sits under `<config>/plugins/cache/`, and the next plugin update replaces it without a trace. In the clone, branch from `main`, make the edit, add or update the file's `policy` entry in `tools/forks.json` when it departs from upstream, run `bun tools/generate.mjs` and `bun test tests/`, and open a pull request. The edit reaches sessions once the pull request merges and the plugin updates.
+- With no `pstack source` line, or the value `none`, show each pstack edit as a diff in the summary and apply none of them.
+
 For each approved Accepted item, follow the Routing field exactly:
 
 - Trivial existing-skill edit (a one-line bullet, a tightened sentence, a stale fact corrected): parent does directly.
