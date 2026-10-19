@@ -14,7 +14,7 @@
     },
     "plugins/pstack/skills/arena/SKILL.md": {
       "kind": "policy",
-      "why": "Adds the Codex seat (poteto-mode/references/codex-seat.md), a cross-family panel member run through the Codex CLI on Claude Code.",
+      "why": "Adds the Codex seats (poteto-mode/references/codex-seat.md): the sheet's codex seat line lists one or more Codex models, each a cross-family panel member run through the Codex CLI on Claude Code.",
       "since": "0.9.74",
       "upstream": "not-proposed"
     },
@@ -38,7 +38,7 @@
     },
     "plugins/pstack/skills/interrogate/SKILL.md": {
       "kind": "policy",
-      "why": "Adds the Codex seat (poteto-mode/references/codex-seat.md), a cross-family panel member run through the Codex CLI on Claude Code.",
+      "why": "Adds the Codex seats (poteto-mode/references/codex-seat.md): the sheet's codex seat line lists one or more Codex models, each a cross-family panel member run through the Codex CLI on Claude Code.",
       "since": "0.9.74",
       "upstream": "not-proposed"
     },
@@ -80,7 +80,7 @@
     },
     "plugins/pstack/skills/poteto-mode/playbooks/eval.md": {
       "kind": "policy",
-      "why": "Adds the Codex seat (poteto-mode/references/codex-seat.md), a cross-family panel member run through the Codex CLI on Claude Code.",
+      "why": "Adds the Codex seats (poteto-mode/references/codex-seat.md): the sheet's codex seat line lists one or more Codex models, each a cross-family panel member run through the Codex CLI on Claude Code.",
       "since": "0.9.74",
       "upstream": "not-proposed"
     },
@@ -104,7 +104,7 @@
     },
     "plugins/pstack/skills/poteto-mode/playbooks/orchestrate.md": {
       "kind": "port-feature",
-      "why": "Runs workers as background subagents in per-writer worktrees under a ~/.claude/orchestrate store because Claude Code has no cloud worker environment, and keeps human rulings in their original wording.",
+      "why": "Runs workers as background subagents in per-writer worktrees under a ~/.claude/orchestrate store because Claude Code has no cloud worker environment, and keeps human rulings in their original wording. Makes the first Codex seat (poteto-mode/references/codex-seat.md) the verifier for a Claude worker's unit on Claude Code.",
       "since": "0.9.29",
       "upstream": "not-proposed"
     },
@@ -254,13 +254,13 @@
     },
     "plugins/pstack/skills/setup-pstack/SKILL.md": {
       "kind": "port-feature",
-      "why": "Writes the override sheet at each runtime's own path, loaded by @-include on Claude Code and pasted into AGENTS.md on Codex since neither has Cursor's always-applied rules, replaces Cursor's budget step with a default effort and per-role effort levels, adds the SessionStart hook toggle and names the Pi extension as a reader of it, lists every runtime's sheet path in a table, and routes GitHub Copilot to copilot.md.",
+      "why": "Writes the override sheet at each runtime's own path, loaded by @-include on Claude Code and pasted into AGENTS.md on Codex since neither has Cursor's always-applied rules, replaces Cursor's budget step with a default effort and per-role effort levels, adds the SessionStart hook toggle and names the Pi extension as a reader of it, lists every runtime's sheet path in a table, and routes GitHub Copilot to copilot.md. Asks for the codex seat line, which lists one or more Codex models as cross-family panel members on Claude Code.",
       "since": "0.9.2",
       "upstream": "not-proposed"
     },
     "plugins/pstack/skills/show-me-your-work/SKILL.md": {
       "kind": "policy",
-      "why": "Documents that log.sh also neutralizes a cell opening with a double quote.",
+      "why": "Documents that log.sh also neutralizes a cell opening with a double quote. Makes the first Codex seat (poteto-mode/references/codex-seat.md) the cross-model reviewer of the trail on Claude Code.",
       "since": "0.9.41",
       "upstream": "not-proposed"
     },
