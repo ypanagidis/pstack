@@ -779,7 +779,7 @@ export function overrideSheetBlock(models) {
     "`default effort` sets the level for a value without one; `session` keeps the parent session's effort. " +
     "`session hook: off` stops the Claude Code or Codex SessionStart hook, or the pstack Pi extension, from injecting the poteto-mode mandate; " +
     "any other value, or no line, leaves it on. " +
-    "`codex seat` names the Codex model and effort for the extra cross-family panel member on Claude Code; `off` turns that seat off. " +
+    "`codex seat` lists one or more Codex models, each with an optional effort and separated by commas, as cross-family panel members on Claude Code; a panel takes every seat, a single-member role takes the first, and `off` turns the seats off. " +
     "`pstack source` is the local clone of the plugin's repository where reflect applies skill edits; `none` keeps them as diffs.\n\n" +
     rows +
     `\n\ndefault effort: ${models.defaultEffort}\nsession hook: on\ncodex seat: gpt-6.1-sol @xhigh\npstack source: none`
