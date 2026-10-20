@@ -189,6 +189,11 @@ describe("applySubstitutions", () => {
       "Families go by model name, such as Opus, Fable, or Sonnet.",
     ],
     [
+      "skills/setup-pstack/SKILL.md",
+      "One runner is claude-opus-5-5-xhigh and one is gpt-5.5-high-fast. The last is grok-4.7-medium-fast.",
+      "One runner is <slug> and one is <slug>. The last is <slug>.",
+    ],
+    [
       "skills/reflect/SKILL.md",
       "One message, three `Task` calls, `subagent_type: generalPurpose`, with `model` set as below.",
       'One message, three `Agent` calls, `subagent_type: "general-purpose"`, with `model` set as below.',
@@ -247,6 +252,11 @@ describe("applySubstitutions", () => {
       "skills/poteto-mode/playbooks/autopilot-stack.md",
       "On the operator's explicit go, arm a `/goal` with the full program objective. The goal continues across turns until the chain is done.",
       "On the operator's explicit go, write the full program objective into the standing orders and restate it in your todolist. That objective stands across turns until the chain is done.",
+    ],
+    [
+      "agents/poteto-agent.md",
+      "search `~/.cursor/plugins/` for a file whose path ends in `skills/poteto-mode/SKILL.md`. If more than one file matches, use the copy whose `.cursor-plugin/plugin.json` has the highest `version`.",
+      "search `~/.claude/plugins/` for a file whose path ends in `skills/poteto-mode/SKILL.md`. If more than one file matches, use the copy whose `.claude-plugin/plugin.json` has the highest `version`.",
     ],
   ])("%s: an upstream sentence takes the port's one form", (rel, upstream, port) => {
     const { text } = applySubstitutions(upstream, RULES.substitutions, rel);

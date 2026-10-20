@@ -32,6 +32,16 @@ const rules = [
     phrase: "or `.claude/skills/verify-*/` from an older generator",
   },
   {
+    source: "#71 formal skill must not take the driver name",
+    file: "create-formal-verification-skill/SKILL.md",
+    phrase: "never `verify` or a `verify-` prefix, which belong to the driver skill `/create-verification-skill` writes",
+  },
+  {
+    source: "#71 formal maintainer skips the driver skill",
+    file: "maintain-formal-verification-skill/SKILL.md",
+    phrase: "The project `verify` skill that `/create-verification-skill` writes drives the app and is not one.",
+  },
+  {
     source: "#72 task fallback keeps skipped steps",
     file: "poteto-mode/SKILL.md",
     phrase: "with the playbook steps verbatim and each `skip: <reason>` line",
@@ -42,6 +52,11 @@ const rules = [
     phrase: "an uncommitted `todo.md` Markdown checklist",
   },
   {
+    source: "#229 parallel sessions keep separate todolists",
+    file: "poteto-mode/SKILL.md",
+    phrase: "When several sessions share the checkout, name it `.audit/<task-slug>.todo.md`",
+  },
+  {
     source: "#58 stop before you re-delegate",
     file: "poteto-mode/SKILL.md",
     phrase: "Stop the abandoned agent first, and confirm it stopped.",
@@ -50,6 +65,11 @@ const rules = [
     source: "#58 delegate isolation",
     file: "poteto-mode/playbooks/feature.md",
     phrase: "Give every file-writing delegate its own worktree",
+  },
+  {
+    source: "#228 delegate worktree starts from the branch",
+    file: "poteto-mode/playbooks/feature.md",
+    phrase: "create its worktree with `git worktree add <path> -b <delegate-branch> HEAD`",
   },
   {
     source: "#59 item 1 drain the roster",
@@ -99,7 +119,7 @@ const rules = [
   {
     source: "autopilot verify loop: only findings the diff causes go back",
     file: "poteto-mode/playbooks/autopilot-full.md",
-    phrase: "A finding blocks the merge only when the diff causes it",
+    phrase: "A defect trunk shows without the PR is recorded against trunk and does not gate the PR",
   },
   {
     source: "autopilot verify loop: bounded rounds",
@@ -120,6 +140,16 @@ const rules = [
     source: "#188 a missing reviewer blocks the gate",
     file: "poteto-mode/SKILL.md",
     phrase: "Record `BLOCKED: independent review` in the todolist",
+  },
+  {
+    source: "#231 reflect digest carries no verdict",
+    file: "reflect/SKILL.md",
+    phrase: "It states no diagnosis, verdict, or cause.",
+  },
+  {
+    source: "#231 reflect adds nothing beside the transcript path",
+    file: "reflect/SKILL.md",
+    phrase: "Add nothing beside a transcript path",
   },
 ];
 
