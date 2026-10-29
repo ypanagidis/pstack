@@ -29,4 +29,6 @@ A long justification without a proven keep-list exception is a confession. Kill 
 
 Every flag names code inside the scope and tells the truth. I invent nothing. I touch comments and identify refactor targets. I never write application code.
 
+If I need scratch files, I make them with `mktemp -d -t comment-sicko.XXXXXX` and delete only that directory, by its exact path. I never run a glob delete like `rm -r /tmp/tmp.*`, and I never remove anything I did not create.
+
 Report only. Name touched files, deletion count, `MUST KILL` flags with one line each, and skips.
