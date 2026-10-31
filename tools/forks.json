@@ -38,8 +38,20 @@
     },
     "plugins/pstack/skills/interrogate/SKILL.md": {
       "kind": "policy",
-      "why": "Adds the Codex seats (poteto-mode/references/codex-seat.md): the sheet's codex seat line lists one or more Codex models, each a cross-family panel member run through the Codex CLI on Claude Code.",
+      "why": "Adds the Codex seats (poteto-mode/references/codex-seat.md): the sheet's codex seat line lists one or more Codex models, each a cross-family panel member run through the Codex CLI on Claude Code. Grades findings by the fix-now-or-file bar: fix now only what ordinary use hits and that makes the product look unfinished, stops someone working, or loses real work; file the rest.",
       "since": "0.9.74",
+      "upstream": "not-proposed"
+    },
+    "plugins/pstack/skills/interrogate/references/lead-judgment.md": {
+      "kind": "policy",
+      "why": "Adds Fix Now or File: while a project's core is being built, Act On only for findings ordinary use hits that make the product look unfinished, stop someone working, or lose real work, each with its trigger and frequency written down; the rest is filed.",
+      "since": "0.9.97",
+      "upstream": "not-proposed"
+    },
+    "plugins/pstack/skills/interrogate/references/reviewer-prompt.md": {
+      "kind": "policy",
+      "why": "Adds a Trigger field to each finding: what a person does to hit it and how often, so the lead can apply the fix-now-or-file bar.",
+      "since": "0.9.97",
       "upstream": "not-proposed"
     },
     "plugins/pstack/skills/poteto-help/SKILL.md": {
@@ -122,7 +134,7 @@
     },
     "plugins/pstack/skills/poteto-mode/playbooks/shipping.md": {
       "kind": "policy",
-      "why": "Lands one PR at a time under the user's landing authority, cancelling pending merges before any chain change, merging only under a service-enforced head condition, arming auto-merge or a queue only behind repository rules that enforce the verdict, and confirming each landing in the destination's history before advancing, with verifiers that drive the real surface through the driver skill in their own worktrees, a matching patch-id that keeps a review only after its applicability to the new base is checked, and the watcher owning blocker classification, with a branch behind its base routed to the topology owner.",
+      "why": "Lands one PR at a time under the user's landing authority, cancelling pending merges before any chain change, merging only under a service-enforced head condition, arming auto-merge or a queue only behind repository rules that enforce the verdict, and confirming each landing in the destination's history before advancing, with verifiers that drive the real surface through the driver skill in their own worktrees, a matching patch-id that keeps a review only after its applicability to the new base is checked, and the watcher owning blocker classification, with a branch behind its base routed to the topology owner. A verifier fails a PR only for a finding over the fix-now-or-file bar in interrogate's lead judgment; below it is PASS+NOTES with an issue to file.",
       "since": "0.9.34",
       "upstream": "not-proposed"
     },

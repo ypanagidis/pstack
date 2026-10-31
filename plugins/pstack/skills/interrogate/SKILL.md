@@ -52,9 +52,9 @@ As results come back, build a unified picture. Parse every reviewer's findings. 
 
 You are the lead reviewer, a pragmatic senior engineer, not a neutral aggregator. Read `references/lead-judgment.md` for the full framework. Put every finding in one of four buckets, with the model(s) that raised it and a one-line rationale.
 
-- **Act on**. Real issues affecting correctness, security, or maintainability given the actual goals. They would block a real PR.
+- **Act on**. Findings that meet the fix-now bar in `references/lead-judgment.md`: people hit them in ordinary use, and they make the product look unfinished, stop someone getting their work done, or lose real work. Each names what a person does to hit it and roughly how often.
 - **Consider**. Legitimate, but you're not sure they outweigh the cost of addressing them now. Worth the user's attention.
-- **Noted**. Technically valid but not actionable. Context-dependent, premature optimization, or low-impact at this stage.
+- **Noted**. Technically valid but below the fix-now bar: rare, hard to reproduce, seen only with fakes, or a rough edge a developer would understand. File each real bug here as an issue.
 - **Dismissed**. Wrong, nitpicky, or missing context, with a brief reason.
 
 ## Output Format
@@ -66,7 +66,7 @@ You are the lead reviewer, a pragmatic senior engineer, not a neutral aggregator
 - Reviewer [label]: [model name], [N findings] (one bullet per reviewer)
 
 ### Act On
-[Each: description, which models raised it, why it matters.]
+[Each: description, which models raised it, what a person does to hit it and how often, why it matters.]
 
 ### Consider
 [Each: description, which models raised it, the tradeoff.]

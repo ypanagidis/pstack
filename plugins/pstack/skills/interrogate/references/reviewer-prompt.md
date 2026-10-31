@@ -38,7 +38,8 @@ For each finding, provide:
    - `nit`: Style, naming, minor improvement.
 2. **Finding**: What the problem is, in concrete terms. Reference specific lines/functions.
 3. **Evidence**: Why you believe this is a problem. Show your reasoning. Don't just assert.
-4. **Suggestion** (optional): What you'd do instead, only if you have a concrete alternative.
+4. **Trigger**: What a person does to hit it ("someone sends a message while…") and roughly how often that happens in ordinary use. Say so when it needs two events within milliseconds of each other or was only seen in tests with fakes. Severity says what breaks and Trigger says how often; report rare problems too, and the lead decides what gets fixed now.
+5. **Suggestion** (optional): What you'd do instead, only if you have a concrete alternative.
 
 A good finding references specific code, not vague concerns ("this could be better"). It distinguishes between "this is broken" and "I would have done this differently". It considers the stated intent. A finding that ignores the context of what's being built is a bad finding.
 
@@ -55,6 +56,7 @@ Return your findings as a structured list:
 **Location**: file:line or function name
 **Finding**: What's wrong
 **Evidence**: Why this matters
+**Trigger**: What a person does to hit it, and how often
 **Suggestion**: (optional) What to do instead
 
 ### 2. [Severity] Short title
